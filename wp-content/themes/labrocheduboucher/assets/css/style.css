@@ -1,0 +1,383 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------------------------
+  Styles généraux pour mobile (mobile-first)
+---------------------------------------------- */
+/*header*/
+h2 {
+  font-size: 28px;
+  color: #B31413;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+h2::before {
+  position: relative;
+  z-index: 1;
+  content: "";
+  display: inline-block;
+  width: 46px;
+  height: 5px;
+  background: #B31413;
+  bottom: 4px;
+  left: -7px;
+}
+h2::after {
+  position: relative;
+  z-index: 1;
+  content: "";
+  display: inline-block;
+  width: 46px;
+  height: 5px;
+  background: #B31413;
+  bottom: 4px;
+  left: 7px;
+}
+
+header .container-menu {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* Empile le logo et le menu */
+  align-items: center;
+  /* Centre tout le contenu (logo + menu) */
+  padding: 1rem;
+}
+header .container-menu .logo-menu {
+  display: flex;
+  justify-content: center;
+  /* Centre le logo */
+}
+header .container-menu .logo-menu .img-logo {
+  height: auto;
+  max-width: 75%;
+  /* Ajuster la taille du logo pour mobile */
+}
+header .container-menu .toggle-menu {
+  text-align: center;
+  cursor: pointer;
+  /* Pour changer le curseur au survol */
+}
+header .container-menu .toggle-menu .svg-container {
+  display: inline-block;
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+  vertical-align: middle;
+  text-align: center;
+}
+header .container-menu .toggle-menu .svg-container .burger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  /* Ajouter un curseur pointer pour l'icône burger */
+}
+header .container-menu .menu {
+  display: none;
+  /* Cache le menu par défaut */
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+header .container-menu .menu.active {
+  display: block;
+  /* Afficher le menu quand il est actif */
+}
+header .container-menu .menu-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "Roboto Slab", serif;
+  /* Ajouter un effet de survol */
+}
+
+.hero {
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  height: 48vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.hero .hero-part {
+  color: #ffffff;
+  font-family: "Cinzel", serif;
+  line-height: 25px;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  /* Titre */
+  /* Contenu */
+}
+.hero .hero-part.title {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+.hero .hero-part.content {
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+.hero .hero-cta {
+  z-index: 3;
+  position: relative;
+  margin-top: 2rem;
+}
+.hero .button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #B31413;
+  color: #ffffff;
+  font-family: "Roboto Slab", serif;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.hero .button:hover {
+  background-color: #560505;
+  transform: scale(1.1);
+}
+
+.intro {
+  height: auto;
+  padding: 2rem 1rem 0;
+  font-family: "Roboto Slab", serif;
+}
+.intro p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
+.intro p span {
+  color: #B31413;
+  font-weight: 400;
+}
+.intro .events {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  align-items: center;
+}
+.intro .events .event-img {
+  margin-bottom: 1rem;
+}
+.intro .events h3 {
+  text-align: center;
+}
+.intro .video-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* Ombre légère au départ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'effet de hover */
+}
+.intro .video-container:hover {
+  transform: scale(1.05); /* Zoom léger sur la vidéo */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25); /* Ombre plus forte */
+}
+.intro video {
+  width: 100%;
+  height: auto;
+}
+
+.prestations {
+  height: 70vh;
+  padding: 2rem 1rem;
+  font-family: "Roboto Slab", serif;
+  background-color: #2b3031;
+}
+
+.prestations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  background-color: #2b3031;
+  gap: 3rem;
+}
+
+/* ----------------------------------------------
+  Styles pour les tablettes (min-width: 768px)
+---------------------------------------------- */
+@media (min-width: 768px) {
+  header .container-menu .logo-menu .img-logo {
+    max-width: 50%;
+  }
+  .hero {
+    height: 40vh;
+  }
+  .hero .hero-part {
+    /* Titre */
+    /* Contenu */
+  }
+  .hero .hero-part.title {
+    font-size: 30px;
+  }
+  .hero .hero-part.content {
+    font-size: 22px;
+  }
+  .hero .button {
+    font-size: 18px;
+  }
+}
+/* ----------------------------------------------
+  Styles pour les ordinateurs de bureau (min-width: 1024px)
+---------------------------------------------- */
+@media (min-width: 1024px) {
+  header .container-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  header .container-menu .logo-menu {
+    display: flex;
+    justify-content: center;
+  }
+  header .container-menu .logo-menu .img-logo {
+    max-width: 18%;
+  }
+  header .container-menu .toggle-menu {
+    display: none;
+  }
+  header .container-menu .menu {
+    margin-top: 0;
+    display: block;
+    margin-bottom: 2rem;
+  }
+  header .container-menu .menu-item {
+    display: inline-block;
+    margin-left: 2rem;
+    cursor: pointer;
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 5px;
+    /* Première ligne, à gauche */
+    /* Deuxième ligne, à droite */
+    /* Effet au hover - les lignes se "déploient" */
+  }
+  header .container-menu .menu-item:hover {
+    color: #B31413;
+  }
+  header .container-menu .menu-item::before, header .container-menu .menu-item::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    /* Ajuste la position sous l'élément */
+    width: 0;
+    height: 2px;
+    background-color: #B31413;
+    /* Couleur des lignes */
+    transition: all 0.3s ease;
+    /* Animation pour le slide */
+    color: #B31413;
+  }
+  header .container-menu .menu-item::before {
+    left: 0;
+  }
+  header .container-menu .menu-item::after {
+    right: 0;
+  }
+  header .container-menu .menu-item:hover::before, header .container-menu .menu-item:hover::after {
+    width: 100%;
+    /* Les lignes s'étendent complètement */
+  }
+  .hero {
+    height: 70vh;
+  }
+  .hero .hero-cta {
+    margin-top: 3rem;
+  }
+  .hero .hero-cta .button {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=style.css.map */

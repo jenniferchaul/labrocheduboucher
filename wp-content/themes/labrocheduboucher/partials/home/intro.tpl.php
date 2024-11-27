@@ -6,7 +6,13 @@
 
     <div class="intro-text">
 
-        <p>Offrez à vos invités un moment unique avec <span>La Broche du Boucher</span> : des viandes locales, cuites lentement au feu de bois, et une prestation sur-mesure qui s’adapte à tous vos événements.</p>
+   
+
+    <p> Offrez à vos invités un moment unique avec <strong>La Broche du Boucher</strong>, un <strong>traiteur</strong> et <strong>artisan boucher</strong> fort de 21 ans d'expérience.
+
+Nous sélectionnons des <strong>viandes 100 % françaises</strong> et les préparons avec soin, cuites lentement <strong>à la broche</strong> et au <strong>feu de bois</strong>, pour une saveur inégalée.</p>
+
+
 
     </div>
 
@@ -25,7 +31,7 @@
         </div>
     </div>
 
-    <p>Notre équipe se déplace partout en France, tout au long de l'année, pour offrir une expérience culinaire conviviale et inoubliable.</p>
+    <p><strong>La Broche du Boucher</strong> se déplace partout en <strong>France</strong>, tout au long de l'année, pour vous offrir une expérience culinaire conviviale et inoubliable.</p>
 
     <div class="video-container">
         <video controls>

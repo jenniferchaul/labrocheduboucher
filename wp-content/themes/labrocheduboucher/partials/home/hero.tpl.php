@@ -21,7 +21,7 @@ if ($backgroundImage) {
         Découvrez notre savoir-faire
     </p>
 
-    <div class="hero-cta">
+    <div class="cta">
         <a class="button">Contactez-nous</a>
     </div>
 </section>

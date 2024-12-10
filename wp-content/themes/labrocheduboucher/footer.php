@@ -5,7 +5,7 @@
             <img src="<?= get_theme_file_uri('assets/images/logo.webp') ?>" alt="Logo du restaurant">
         </div>
 
-        <div>
+        <div class="footer__main-info">
             <!-- Informations -->
             <div class="footer__info">
                 <div class="footer__info-item">

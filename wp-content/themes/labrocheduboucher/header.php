@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 </head>
 
 <body>
@@ -35,9 +40,6 @@
         </div>
     </div>
 
-
-
-
     <header>
         <div class="container-menu">
             <div class="logo-menu">
@@ -55,13 +57,27 @@
 
             <nav class="menu">
                 <ul class="main-menu">
-                    <li class="menu-item">Accueil</li>
-                    <li class="menu-item">Présentation</li>
-                    <li class="menu-item">Nos prestations</li>
-                    <li class="menu-item">Actualités</li>
-                    <li class="menu-item">Galerie</li>
-                    <li class="menu-item">Avis clients</li>
-                    <li class="menu-item">Contact</li>
+                    <li class="menu-item">
+                        <a class="item-link" href="/home">Accueil</a>
+                    </li>
+                    <li class="menu-item">
+                    <a class="item-link" href="/présentation">Présentation</a>
+                    </li>
+                    <li class="menu-item">
+                    <a class="item-link" href="/home">Nos prestations</a>
+                    </li>
+                    <li class="menu-item">
+                    <a class="item-link" href="/home">Actualités</a>
+                    </li>
+                    <li class="menu-item">
+                    <a class="item-link" href="/home">Galerie</a>
+                    </li>
+                    <li class="menu-item">
+                    <a class="item-link" href="/reviews">Avis clients</a>
+                    </li>
+                    <li class="menu-item">
+                    <a class="item-link" href="/home">Contact</a>
+                    </li>
                 </ul>
             </nav>
         </div>

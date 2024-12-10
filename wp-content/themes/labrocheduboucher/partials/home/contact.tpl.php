@@ -2,7 +2,7 @@
 >
     <div class="contact-overlay">
         <div class="contact-content">
-            <h2 class="contact-title">Besoin d'informations</h2>
+            <h2 class="contact-title">Contact</h2>
             <p class="contact-text">
                 Vous souhaitez réserver un service de traiteur ou obtenir un devis pour un événement ?
                 N'hésitez pas à nous contacter directement !

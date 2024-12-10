@@ -1,29 +1,41 @@
-<section class="news">
+<section class="wrap-actu-accueil">
+  <div class="container">
+    <div class="row">
+      <h2>Les actualités</h2>
+    </div>
 
-<h2>
-    Actualités
-</h2>
+    <div id="carousel-actus" class="owl-carousel">
+      <?php
+      $args = array(
+        'post_type' => 'actualite',
+        'posts_per_page' => -1,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      );
+      $query = new WP_Query($args);
 
-<div class="news-list">
-        <div class="new" >
-            <img src="<?= get_theme_file_uri('assets/images/actu1.jpg') ?>" alt="Viande 1" class="new-img">
-            <div class="new-description">
-                <h3>Anniversaire</h3>
-                <p>Praesent sed sodales magna. Pellentesque egestas eleifend libero vel porta.</p>
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+          <div class="item">
+            <div class="content-actu-accueil">
+              <div class="media-actu-accueil">
+                <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+              </div>
+              <div class="text-actu-accueil">
+                <h3><?= esc_html(get_the_title()); ?></h3>
+                <p><?= wp_trim_words(get_the_excerpt()); ?></p>
+              </div>
             </div>
-        </div>
-        <div class="new">
-            <img src="<?= get_theme_file_uri('assets/images/paella.jpg') ?>" alt="Viande 3" class="new-img">
-            <div class="new-description">
-                <h3>Baptème</h3>
-                <p>In aliquam ex condimentum maximus aliquam. Quisque interdum eros non commodo mollis.</p>
-            </div>
-        </div>
+          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
+      <?php else : ?>
+        <p>Aucune actualité disponible.</p>
+      <?php endif; ?>
     </div>
 
     <div class="cta">
-        <a class="button">Voir plus</a>
+    <a class="button">Toutes nos actualités</a>
+      <!--<a href="<?= get_post_type_archive_link('actualite'); ?>" class="btn-voir-plus">Voir toutes les actualités</a>-->
     </div>
-
+  </div>
 </section>
-

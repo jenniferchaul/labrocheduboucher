@@ -9,6 +9,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTop = document.getElementById('back-to-top');
+
+  // Afficher le bouton au scroll
+  window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+      } else {
+          backToTop.classList.remove('visible');
+      }
+  });
+
+  // Remonter la page au clic
+  backToTop.addEventListener('click', () => {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+      });
+  });
+});
+
+
 
 jQuery(document).ready(function () {
     const $carousel = jQuery("#carousel-actus");
@@ -78,3 +100,40 @@ jQuery(document).ready(function () {
     // Par défaut, afficher les viandes
     fetchPrestations('viandes');
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('header');
+  const stickyClass = 'sticky';
+
+  window.addEventListener('scroll', function () {
+      if (window.scrollY > 50) {
+          header.classList.add(stickyClass);
+      } else {
+          header.classList.remove(stickyClass);
+      }
+  });
+});
+
+//document.addEventListener("DOMContentLoaded", () => {
+//  const menuLinks = document.querySelectorAll("a[href^='#']"); // Sélectionne tous les liens avec une ancre
+//
+//  menuLinks.forEach(link => {
+//      link.addEventListener("click", function (e) {
+//          e.preventDefault();
+//
+//          const targetID = this.getAttribute("href").substring(1); // Récupère l'ID cible
+//          const targetSection = document.getElementById(targetID);
+//
+//          if (targetSection) {
+//              const offset = 50; // Ajuste ce chiffre à la hauteur du header
+//              const topPosition = targetSection.offsetTop - offset;
+//
+//              window.scrollTo({
+//                  top: topPosition,
+//                  behavior: "smooth"
+//              });
+//          }
+//      });
+//  });
+//});
+

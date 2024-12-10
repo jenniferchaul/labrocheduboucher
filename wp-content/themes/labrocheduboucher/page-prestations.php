@@ -6,14 +6,10 @@ Template Name: Prestations
 get_header();
 ?>
 
-<section class="hero-prestations">
-    <div class="hero-content">
-        <h1>Découvrez Nos Prestations</h1>
-        <p>Des viandes de qualité et des recettes uniques pour vos événements.</p>
-    </div>
-</section>
+<?php get_template_part('partials/prestations/hero.tpl'); ?>
 
-<section class="prestations">
+
+<section class="prestations-page">
     <h2 class="prestations-title">Nos Prestations</h2>
 
     <div class="prestations-tabs">

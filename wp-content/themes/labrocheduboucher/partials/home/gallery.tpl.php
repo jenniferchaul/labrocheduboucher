@@ -1,4 +1,4 @@
-<section class="gallery-preview">
+<section id="gallery" class="gallery-preview">
     <h2>Galerie</h2>
     <div class="gallery-grid">
         <?php

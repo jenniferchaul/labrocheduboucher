@@ -1,4 +1,4 @@
-<section class="prestations">
+<section id="prestations" class="prestations">
     <h2 class="prestations-title">Nos Prestations</h2>
 
     <!-- Viandes à la Broche -->

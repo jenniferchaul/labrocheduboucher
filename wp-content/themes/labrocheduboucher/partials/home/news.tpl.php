@@ -1,4 +1,4 @@
-<section class="wrap-actu-accueil">
+<section id="news" class="wrap-actu-accueil">
   <div class="container">
     <div class="row">
       <h2>Les actualités</h2>

@@ -42,8 +42,9 @@
 
     <header>
         <div class="container-menu">
-            <div class="logo-menu">
+            <div class="logo-menu"><a href="<?= home_url('/') ?>">
                 <img class="img-logo" src="<?= get_theme_file_uri('assets/images/logo.webp') ?>" alt="logo">
+                </a>
             </div>
             <div class="toggle-menu">
                 <span class="svg-container">
@@ -58,25 +59,25 @@
             <nav class="menu">
                 <ul class="main-menu">
                     <li class="menu-item">
-                        <a class="item-link" href="/home">Accueil</a>
+                        <a class="item-link" href="<?= home_url('/') ?>">Accueil</a>
                     </li>
                     <li class="menu-item">
-                    <a class="item-link" href="/présentation">Présentation</a>
+                    <a class="item-link" href="<?= home_url('/#intro') ?>">Présentation</a>
                     </li>
                     <li class="menu-item">
-                    <a class="item-link" href="/home">Nos prestations</a>
+                    <a class="item-link" href="<?= home_url('/#prestations') ?>">Nos prestations</a>
                     </li>
                     <li class="menu-item">
-                    <a class="item-link" href="/home">Actualités</a>
+                    <a class="item-link" href="<?= home_url('/#news') ?>">Actualités</a>
                     </li>
                     <li class="menu-item">
-                    <a class="item-link" href="/home">Galerie</a>
+                    <a class="item-link" href="<?= home_url('/#gallery') ?>">Galerie</a>
                     </li>
                     <li class="menu-item">
-                    <a class="item-link" href="/reviews">Avis clients</a>
+                    <a class="item-link" href="<?= home_url('/#reviews') ?>">Avis clients</a>
                     </li>
                     <li class="menu-item">
-                    <a class="item-link" href="/home">Contact</a>
+                    <a class="item-link" href="<?= home_url('/#contact') ?>">Contact</a>
                     </li>
                 </ul>
             </nav>

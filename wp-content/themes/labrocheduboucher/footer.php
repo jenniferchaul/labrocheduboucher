@@ -59,6 +59,11 @@
     </div>
 </footer>
 
+<div id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+
 <?php wp_footer(); ?>
 </body>
 

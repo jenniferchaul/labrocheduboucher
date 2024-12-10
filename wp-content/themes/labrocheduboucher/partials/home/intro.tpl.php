@@ -1,4 +1,4 @@
-<section class="intro" id="présentation">
+<section class="intro" id="intro">
 
     <h2>
         Présentation

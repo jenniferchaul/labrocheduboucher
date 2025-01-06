@@ -13,7 +13,7 @@ get_header();
         Retour à l'accueil
     </a>
     <div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IMG-20241114-WA0061.jpg" alt="Image 404" style="margin-top: 2rem; max-width: 35%; height: auto;">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IMG-20241114-WA0061.webp" alt="Image 404" style="margin-top: 2rem; max-width: 35%; height: auto;">
     </div>
 </div>
 

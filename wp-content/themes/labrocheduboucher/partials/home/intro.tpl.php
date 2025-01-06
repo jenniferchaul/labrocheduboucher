@@ -12,15 +12,15 @@
 
         <div class="events">
             <div class="event-img">
-                <img src="<?= get_theme_file_uri('assets/images/wedding.png') ?>" alt="wedding">
+                <img src="<?= get_theme_file_uri('assets/images/wedding.webp') ?>" alt="wedding">
                 <h3>Mariage</h3>
             </div>
             <div class="event-img">
-                <img src="<?= get_theme_file_uri('assets/images/fete.png') ?>" alt="fete">
+                <img src="<?= get_theme_file_uri('assets/images/fete.webp') ?>" alt="fete">
                 <h3>Fête privée</h3>
             </div>
             <div class="event-img">
-                <img src="<?= get_theme_file_uri('assets/images/seminaire.png') ?>" alt="seminaire">
+                <img src="<?= get_theme_file_uri('assets/images/seminaire.webp') ?>" alt="seminaire">
                 <h3>Séminaire</h3>
             </div>
         </div>

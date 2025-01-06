@@ -6,8 +6,6 @@ if ($backgroundImage) {
     $style = 'background:' .
         'url(' . $backgroundImage . ')';
 }
-
-
 ?>
 
 <section class="hero" style="<?= $style; ?>">

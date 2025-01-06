@@ -1,4 +1,4 @@
-<section class="contact-section" style="background: url('<?php echo esc_url(get_theme_file_uri('assets/images/IMG-20241114-WA0072.jpg')); ?>') no-repeat center center / cover;">
+<section class="contact-section" style="background: url('<?php echo esc_url(get_theme_file_uri('assets/images/IMG-20241114-WA0072.webp')); ?>') no-repeat center center / cover;">
     <div class="contact-overlay">
         <div class="contact-content">
             <h2 class="contact-title">Contact</h2>

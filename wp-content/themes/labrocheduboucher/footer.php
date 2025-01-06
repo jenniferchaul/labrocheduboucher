@@ -57,7 +57,7 @@
 
                 <a href=<?php echo esc_url('https://www.jcdevandcode.fr'); ?> target="_blank" rel="noopener noreferrer">Site web crée par <span>jc dev&code</span>
 
-                    <div><img class="logo-dev" src="<?= get_theme_file_uri('assets/images/jc.png') ?>" alt="Logo du développeur"></div>
+                    <div><img class="logo-dev" src="<?= get_theme_file_uri('assets/images/jc.webp') ?>" alt="Logo du développeur"></div>
                 </a>
 
             </div>

@@ -8,7 +8,6 @@ get_header();
 
 <?php get_template_part('partials/prestations/hero.tpl'); ?>
 
-
 <section class="prestations-page">
     <h2 class="prestations-title">Nos Prestations</h2>
 
@@ -25,7 +24,6 @@ get_header();
         <!-- Contenu dynamique des prestations sera chargé ici -->
     </div>
 </section>
-
 
 <script>
     const ajaxUrl = '<?= admin_url('admin-ajax.php'); ?>';

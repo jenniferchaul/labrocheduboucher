@@ -1,139 +1,153 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du menu toggle
     const toggleMenuButton = document.querySelector('.toggle-menu');
     const menu = document.querySelector('.menu');
     const burgerIcon = document.querySelector('.burger-menu');
-    
-    toggleMenuButton.addEventListener('click', function() {
-        menu.classList.toggle('active'); // Afficher ou masquer le menu
-        burgerIcon.classList.toggle('active'); // Permet d'ajouter un effet visuel au burger
-    });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  const backToTop = document.getElementById('back-to-top');
-
-  // Afficher le bouton au scroll
-  window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-          backToTop.classList.add('visible');
-      } else {
-          backToTop.classList.remove('visible');
-      }
-  });
-
-  // Remonter la page au clic
-  backToTop.addEventListener('click', () => {
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-      });
-  });
-});
-
-
-
-jQuery(document).ready(function () {
-    const $carousel = jQuery("#carousel-actus");
-  
-    // Détruire toute instance existante avant de réinitialiser
-    if ($carousel.hasClass("owl-loaded")) {
-      $carousel.trigger("destroy.owl.carousel");
-      $carousel.removeClass("owl-loaded");
+    if (toggleMenuButton) {
+        toggleMenuButton.addEventListener('click', function() {
+            if (menu) menu.classList.toggle('active');
+            if (burgerIcon) burgerIcon.classList.toggle('active');
+            toggleMenuButton.classList.toggle('is-opened');
+        });
     }
-  
-    // Réinitialiser proprement
-    $carousel.owlCarousel({
-      loop: true,
-      margin: 20,
-      nav: false,
-      dots: true, // Gère les points
-      autoplay: true,
-      autoplayTimeout: 5000,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        768: {
-          items: 2,
-        },
-        1024: {
-          items: 3,
-        },
-      },
-    });
-  });
-  
-  document.addEventListener('DOMContentLoaded', function () {
+
+    // Gestion du bouton "Back to Top"
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Gestion des onglets "Prestations"
     const tabs = document.querySelectorAll('.prestations-subtitle');
     const prestationsContent = document.querySelector('.prestations-content');
 
-    function fetchPrestations(category) {
-        prestationsContent.innerHTML = '<p>Chargement...</p>';
-        fetch(`${ajaxUrl}?action=get_prestations&category=${category}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    prestationsContent.innerHTML = data.data.html;
-                } else {
-                    prestationsContent.innerHTML = `<p>Impossible de charger les prestations. Veuillez réessayer plus tard.</p>`;
-                }
-            })
-            .catch(() => {
-                prestationsContent.innerHTML = '<p>Erreur lors du chargement. Réessayez plus tard.</p>';
+    if (tabs.length && prestationsContent) {
+        function fetchPrestations(category) {
+            prestationsContent.innerHTML = '<p>Chargement...</p>';
+
+            fetch(`${ajaxUrl}?action=get_prestations&category=${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        prestationsContent.innerHTML = data.data.html;
+                    } else {
+                        prestationsContent.innerHTML = '<p>Impossible de charger les prestations. Veuillez réessayer plus tard.</p>';
+                    }
+                })
+                .catch(() => {
+                    prestationsContent.innerHTML = '<p>Erreur lors du chargement. Réessayez plus tard.</p>';
+                });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.dataset.category;
+                fetchPrestations(category);
             });
+        });
+
+        // Par défaut, afficher les viandes
+        fetchPrestations('viandes');
     }
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Désactiver tous les onglets
-            tabs.forEach(t => t.classList.remove('active'));
-
-            // Activer celui cliqué
-            tab.classList.add('active');
-
-            // Charger les prestations pour la catégorie correspondante
-            const category = tab.dataset.category;
-            fetchPrestations(category);
+    // Gestion de l'entête sticky
+    const header = document.querySelector('header');
+    if (header) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
         });
-    });
+    }
 
-    // Par défaut, afficher les viandes
-    fetchPrestations('viandes');
+    // Gestion des filtres de galerie
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryContainer = document.querySelector('.gallery-container');
+
+    if (filterButtons.length && galleryContainer) {
+        function loadGalleryImages(category) {
+            galleryContainer.innerHTML = '<p>Chargement...</p>';
+
+            fetch(`${ajaxUrl}?action=get_gallery_images&category=${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        galleryContainer.innerHTML = '';
+                        data.data.images.forEach(image => {
+                            const imgElement = document.createElement('div');
+                            imgElement.classList.add('gallery-item');
+                            imgElement.innerHTML = `
+                                <a href="${image.url}" data-lightbox="gallery">
+                                    <img src="${image.thumbnail}" alt="${image.alt}">
+                                </a>
+                            `;
+                            galleryContainer.appendChild(imgElement);
+                        });
+                    } else {
+                        galleryContainer.innerHTML = '<p>Impossible de charger les images. Essayez plus tard.</p>';
+                    }
+                })
+                .catch(() => {
+                    galleryContainer.innerHTML = '<p>Erreur de chargement. Réessayez plus tard.</p>';
+                });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.dataset.category;
+                loadGalleryImages(category);
+            });
+        });
+
+        // Par défaut, afficher toutes les images
+        loadGalleryImages('toutes');
+    }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('header');
-  const stickyClass = 'sticky';
+// Initialisation du carousel avec jQuery
+jQuery(document).ready(function () {
+    const $carousel = jQuery("#carousel-actus");
 
-  window.addEventListener('scroll', function () {
-      if (window.scrollY > 50) {
-          header.classList.add(stickyClass);
-      } else {
-          header.classList.remove(stickyClass);
-      }
-  });
+    if ($carousel.length) {
+        if ($carousel.hasClass("owl-loaded")) {
+            $carousel.trigger("destroy.owl.carousel");
+            $carousel.removeClass("owl-loaded");
+        }
+
+        $carousel.owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+            }
+        });
+    }
 });
-
-//document.addEventListener("DOMContentLoaded", () => {
-//  const menuLinks = document.querySelectorAll("a[href^='#']"); // Sélectionne tous les liens avec une ancre
-//
-//  menuLinks.forEach(link => {
-//      link.addEventListener("click", function (e) {
-//          e.preventDefault();
-//
-//          const targetID = this.getAttribute("href").substring(1); // Récupère l'ID cible
-//          const targetSection = document.getElementById(targetID);
-//
-//          if (targetSection) {
-//              const offset = 50; // Ajuste ce chiffre à la hauteur du header
-//              const topPosition = targetSection.offsetTop - offset;
-//
-//              window.scrollTo({
-//                  top: topPosition,
-//                  behavior: "smooth"
-//              });
-//          }
-//      });
-//  });
-//});
-

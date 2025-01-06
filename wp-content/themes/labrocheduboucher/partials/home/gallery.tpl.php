@@ -4,7 +4,7 @@
         <?php
         $gallery_args = array(
             'post_type'      => 'gallery',
-            'posts_per_page' => 6, // Limite à 6 images
+            'posts_per_page' => 6,
             'orderby'        => 'date',
             'order'          => 'DESC',
         );
@@ -14,10 +14,10 @@
             while ($gallery_query->have_posts()) : $gallery_query->the_post(); ?>
                 <a href="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" data-lightbox="gallery" data-title="<?= esc_html(get_the_title()); ?>">
                     <div class="gallery-item">
-                        <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                        <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?= esc_attr(get_the_title()); ?>">
                     </div>
                 </a>
-            <?php endwhile;
+        <?php endwhile;
             wp_reset_postdata();
         else :
             echo '<p>Aucune image disponible pour la galerie.</p>';

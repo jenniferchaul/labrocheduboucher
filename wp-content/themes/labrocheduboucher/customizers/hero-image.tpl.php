@@ -8,7 +8,6 @@ add_action(
 
 function register_hero_picture_customizer(WP_Customize_Manager $themeCustomizerObject)
 {
-
     // identifiant de la section qui s'affichera dans le backoffice de wordpress (appearance->customize)
     $customSectionName = 'custom-section-pictures';
 
@@ -28,7 +27,6 @@ function register_hero_picture_customizer(WP_Customize_Manager $themeCustomizerO
             'priority' => 0   
         ]
     );
-
 
     $themeCustomizerObject->add_setting(
         $customizableVariableName,   

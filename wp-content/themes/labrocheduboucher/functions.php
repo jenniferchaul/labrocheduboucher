@@ -57,6 +57,16 @@ add_action('wp_enqueue_scripts', function () {
     );
 });
 
+// Ajouter ajaxUrl pour les requêtes AJAX
+function add_ajax_url_to_script()
+{
+?>
+    <script type="text/javascript">
+        var ajaxUrl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    </script>
+    <?php
+}
+add_action('wp_head', 'add_ajax_url_to_script');
 
 // Enregistrer un Custom Post Type pour les prestations
 function labrocheduboucher_register_prestations_cpt()
@@ -107,12 +117,12 @@ function labrocheduboucher_register_types_taxonomy()
 
     $args = array(
         'labels'            => $labels,
-        'hierarchical'      => true, // Définit une structure hiérarchique (comme les catégories)
-        'show_ui'           => true, // Afficher dans l'interface d'administration
-        'show_admin_column' => true, // Ajouter une colonne dans la liste des Prestations
-        'query_var'         => true, // Permet de faire des requêtes via cette taxonomie
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
         'rewrite'           => array('slug' => 'type-prestation'),
-        'show_in_rest'      => true, // IMPORTANT : Pour l'éditeur Gutenberg
+        'show_in_rest'      => true,
     );
 
     register_taxonomy('type_prestation', 'prestation', $args);
@@ -153,7 +163,8 @@ function labrocheduboucher_register_news_cpt()
 add_action('init', 'labrocheduboucher_register_news_cpt');
 
 // Enregistrer un Custom Post Type pour la galerie
-function labrocheduboucher_register_gallery_cpt() {
+function labrocheduboucher_register_gallery_cpt()
+{
     $labels = array(
         'name'               => 'Galerie',
         'singular_name'      => 'Image de la Galerie',
@@ -184,7 +195,8 @@ function labrocheduboucher_register_gallery_cpt() {
 add_action('init', 'labrocheduboucher_register_gallery_cpt');
 
 // Fonction pour charger les prestations via AJAX
-function get_prestations_ajax() {
+function get_prestations_ajax()
+{
     if (!isset($_GET['category'])) {
         wp_send_json_error('Catégorie non spécifiée.');
     }
@@ -219,14 +231,16 @@ function get_prestations_ajax() {
 
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="prestation">
-                <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?= esc_attr(get_the_title()); ?>" class="prestation-img">
-                <div class="prestation-description">
-                    <h4><?= esc_html(get_the_title()); ?></h4>
-                    <p><?= esc_html(get_the_excerpt()); ?></p>
+            <div class="item">
+                <div class="prestation">
+                    <img class="prestation-img" src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                    <div class="prestation-description">
+                        <h4><?= esc_html(get_the_title()); ?></h4>
+                        <p><?= esc_html(get_the_excerpt()); ?></p>
+                    </div>
                 </div>
             </div>
-        <?php endwhile;
+<?php endwhile;
         wp_reset_postdata();
     else :
         echo '<p>Aucune prestation disponible pour cette catégorie.</p>';
@@ -238,3 +252,80 @@ function get_prestations_ajax() {
 }
 add_action('wp_ajax_get_prestations', 'get_prestations_ajax');
 add_action('wp_ajax_nopriv_get_prestations', 'get_prestations_ajax');
+
+// Fonction pour récupérer les images de la galerie via AJAX
+function get_gallery_images_ajax()
+{
+    if (!isset($_GET['category'])) {
+        wp_send_json_error('Catégorie non spécifiée.');
+    }
+
+    $category = sanitize_text_field($_GET['category']);
+
+    // Si la catégorie est "toutes", on ignore la taxonomie
+    $args = [
+        'post_type' => 'gallery',
+        'posts_per_page' => -1,
+    ];
+
+    // Filtrer par taxonomie si la catégorie n'est pas "toutes"
+    if ($category !== 'toutes') {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'type_image',
+                'field'    => 'slug',
+                'terms'    => $category,
+            ],
+        ];
+    }
+
+    $query = new WP_Query($args);
+
+    $images = [];
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $images[] = [
+                'url' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
+                'thumbnail' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
+                'alt' => get_the_title(),
+            ];
+        }
+    }
+
+    wp_reset_postdata();
+
+    wp_send_json_success(['images' => $images]);
+}
+add_action('wp_ajax_get_gallery_images', 'get_gallery_images_ajax');
+add_action('wp_ajax_nopriv_get_gallery_images', 'get_gallery_images_ajax');
+
+
+// Enregistrer une taxonomie pour le type de chaque image de la galerie
+function labrocheduboucher_register_image_type_taxonomy()
+{
+    $labels = array(
+        'name'              => 'Types d\'images',
+        'singular_name'     => 'Type d\'image',
+        'search_items'      => 'Rechercher des Types d\'images',
+        'all_items'         => 'Tous les Types d\'images',
+        'edit_item'         => 'Modifier le Type d\'image',
+        'update_item'       => 'Mettre à jour le Type d\'image',
+        'add_new_item'      => 'Ajouter un nouveau Type d\'image',
+        'new_item_name'     => 'Nom du nouveau Type d\'image',
+        'menu_name'         => 'Types d\'images',
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'type-image'),
+        'show_in_rest'      => true,
+    );
+
+    register_taxonomy('type_image', 'gallery', $args);
+}
+add_action('init', 'labrocheduboucher_register_image_type_taxonomy');

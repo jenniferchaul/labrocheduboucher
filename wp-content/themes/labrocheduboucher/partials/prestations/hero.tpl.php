@@ -6,22 +6,19 @@ if ($backgroundImage) {
     $style = 'background:' .
         'url(' . $backgroundImage . ')';
 }
-
-
 ?>
 
 <section class="hero" style="<?= $style; ?>">
 
     <p class="hero-part title">
-    Découvrez Nos Prestations
-        <!--Un savoir-faire unique.-->
+        Nos Prestations
     </p>
 
     <p class="hero-part content">
-    Des viandes de qualité et des spécialités maison pour vos événements.
+        Nos viandes et spécialités maison.
     </p>
 
     <div class="cta">
-        <a class="button">Contactez-nous</a>
+        <a href="<?= home_url('/contact') ?>" class="button">Contactez-nous</a>
     </div>
 </section>

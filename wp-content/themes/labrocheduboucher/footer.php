@@ -1,8 +1,9 @@
 <footer class="footer">
     <div class="footer__container">
         <!-- Logo -->
-        <div class="footer__logo">
-            <img src="<?= get_theme_file_uri('assets/images/logo.webp') ?>" alt="Logo du restaurant">
+        <div class="footer__logo"><a href="<?= home_url('/') ?>">
+                <img src="<?= get_theme_file_uri('assets/images/logo.webp') ?>" alt="Logo du traiteur">
+            </a>
         </div>
 
         <div class="footer__main-info">
@@ -10,11 +11,11 @@
             <div class="footer__info">
                 <div class="footer__info-item">
                     <i class="fas fa-phone-alt footer__icon"></i>
-                    <p><a href="tel:+33612345678">06 12 34 56 78</a></p>
+                    <p><a href="tel:+33612345678">06 29 84 15 79</a></p>
                 </div>
                 <div class="footer__info-item">
                     <i class="fas fa-envelope footer__icon"></i>
-                    <p><a href="mailto:contact@labrocheduboucher.com">contact@labrocheduboucher.com</a></p>
+                    <p><a href="mailto:contact@labrocheduboucher.com">labrocheduboucher@gmail.com</a></p>
                 </div>
                 <div class="footer__info-item">
                     <i class="fas fa-map-marker-alt footer__icon"></i>
@@ -24,10 +25,10 @@
 
             <!-- Réseaux sociaux -->
             <div class="footer__socials">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61557097838150" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/labrocheduboucher/?locale=en_US%2Cen_GB" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -35,10 +36,10 @@
 
             <!-- Liens d'accès rapides -->
             <nav class="footer__links">
-                <a href="<?php echo home_url('/présentation'); ?>">Présentation</a>
-                <a href="<?php echo home_url('/services'); ?>">Nos prestations</a>
-                <a href="<?php echo home_url('/actualités'); ?>">Actualités</a>
-                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+                <a href="<?= home_url('/#intro') ?>">Présentation</a>
+                <a href="<?= home_url('/prestations') ?>">Nos prestations</a>
+                <a href="<?= home_url('/actualites') ?>">Actualités</a>
+                <a href="<?= home_url('/contact') ?>">Contact</a>
             </nav>
 
         </div>
@@ -49,11 +50,17 @@
             <nav>
                 <a href="<?php echo home_url('/mentions-legales'); ?>">Mentions légales</a>
                 -
-                <a href="<?php echo home_url('/politique-confidentialite'); ?>">Politique de confidentialité</a>
+                <a href="<?php echo home_url('/politique-de-confidentialite'); ?>">Politique de confidentialité</a>
             </nav>
-            <p>
-                <a href="www.jcdevandcode.fr">Site web crée par jc dev&code</a>
-            </p>
+
+            <div class="part-dev">
+
+                <a href=<?php echo esc_url('https://www.jcdevandcode.fr'); ?> target="_blank" rel="noopener noreferrer">Site web crée par <span>jc dev&code</span>
+
+                    <div><img class="logo-dev" src="<?= get_theme_file_uri('assets/images/jc.png') ?>" alt="Logo du développeur"></div>
+                </a>
+
+            </div>
         </div>
 
     </div>
@@ -62,7 +69,6 @@
 <div id="back-to-top">
     <i class="fas fa-arrow-up"></i>
 </div>
-
 
 <?php wp_footer(); ?>
 </body>

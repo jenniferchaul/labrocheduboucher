@@ -45,12 +45,12 @@
     </div>
 
     <div class="bg-video">
-    <div class="video-container">
-        <video controls>
-            <source src="<?= get_theme_file_uri('assets/vidéos/présentation.mp4') ?>" type="video/mp4">
-            Votre navigateur ne prend pas en charge la vidéo.
-        </video>
-    </div>
+        <div class="video-container">
+            <video controls>
+                <source src="<?= get_theme_file_uri('assets/vidéos/présentation.mp4') ?>" type="video/mp4">
+                Votre navigateur ne prend pas en charge la vidéo.
+            </video>
+        </div>
     </div>
 
 </section>

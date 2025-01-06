@@ -14,7 +14,7 @@
                 array(
                     'taxonomy' => 'type_prestation',
                     'field'    => 'slug',
-                    'terms'    => 'viandes-a-la-broche', // Slug du type "Viandes à la Broche"
+                    'terms'    => 'viandes-a-la-broche',
                 ),
             ),
         );
@@ -29,7 +29,7 @@
                         <p><?= esc_html(get_the_content()); ?></p>
                     </div>
                 </div>
-            <?php endwhile;
+        <?php endwhile;
             wp_reset_postdata();
         else :
             echo '<p>Aucune prestation disponible pour les viandes à la broche.</p>';
@@ -38,7 +38,7 @@
     </div>
 
     <div class="cta">
-        <a class="button">Toutes nos viandes</a>
+        <a class="button" href="<?= home_url('/prestations') ?>">Toutes nos viandes</a>
     </div>
 
     <!-- Paella et Accompagnements -->
@@ -54,7 +54,7 @@
                 array(
                     'taxonomy' => 'type_prestation',
                     'field'    => 'slug',
-                    'terms'    => 'paella-et-accompagnements', // Slug du type "Paella et Accompagnements"
+                    'terms'    => 'paella-et-accompagnements',
                 ),
             ),
         );
@@ -69,7 +69,7 @@
                         <p><?= esc_html(get_the_content()); ?></p>
                     </div>
                 </div>
-            <?php endwhile;
+        <?php endwhile;
             wp_reset_postdata();
         else :
             echo '<p>Aucune prestation disponible pour la paella et les accompagnements.</p>';
@@ -78,6 +78,6 @@
     </div>
 
     <div class="cta">
-        <a class="button">Toutes nos spécialités maison</a>
+        <a class="button" href="<?= home_url('/prestations') ?>">Toutes nos spécialités maison</a>
     </div>
 </section>

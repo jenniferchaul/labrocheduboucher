@@ -23,19 +23,19 @@
               </div>
               <div class="text-actu-accueil">
                 <h3><?= esc_html(get_the_title()); ?></h3>
-                <p><?= wp_trim_words(get_the_excerpt()); ?></p>
+                <p><?= wp_trim_words(get_the_content()); ?></p>
               </div>
             </div>
           </div>
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
       <?php else : ?>
         <p>Aucune actualité disponible.</p>
       <?php endif; ?>
     </div>
 
     <div class="cta">
-    <a class="button">Toutes nos actualités</a>
-      <!--<a href="<?= get_post_type_archive_link('actualite'); ?>" class="btn-voir-plus">Voir toutes les actualités</a>-->
+      <a href="<?= home_url('/actualites') ?>" class="button">Toutes nos actualités</a>
     </div>
   </div>
 </section>

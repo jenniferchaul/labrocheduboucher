@@ -6,15 +6,12 @@ if ($backgroundImage) {
     $style = 'background:' .
         'url(' . $backgroundImage . ')';
 }
-
-
 ?>
 
 <section class="hero" style="<?= $style; ?>">
 
     <p class="hero-part title">
         L’Art de la viande à la broche
-        <!--Un savoir-faire unique.-->
     </p>
 
     <p class="hero-part content">
@@ -22,6 +19,6 @@ if ($backgroundImage) {
     </p>
 
     <div class="cta">
-        <a class="button">Contactez-nous</a>
+        <a href="<?= home_url('/contact') ?>" class="button">Contactez-nous</a>
     </div>
 </section>

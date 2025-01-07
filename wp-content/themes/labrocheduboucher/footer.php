@@ -39,6 +39,7 @@
                 <a href="<?= home_url('/#intro') ?>">Présentation</a>
                 <a href="<?= home_url('/prestations') ?>">Nos prestations</a>
                 <a href="<?= home_url('/actualites') ?>">Actualités</a>
+                <a href="<?= home_url('/galerie') ?>">Galerie</a>
                 <a href="<?= home_url('/contact') ?>">Contact</a>
             </nav>
 

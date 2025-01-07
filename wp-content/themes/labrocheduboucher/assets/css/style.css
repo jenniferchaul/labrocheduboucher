@@ -168,7 +168,7 @@ h2 {
 }
 @media (max-width: 320px) {
   h2 {
-    font-size: 19px;
+    font-size: 16px;
   }
 }
 h2::before {
@@ -200,7 +200,6 @@ h2::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
   text-align: center;
 }
 
@@ -280,11 +279,10 @@ header.sticky .logo-menu .img-logo {
   max-width: 50% !important;
 }
 header .container-menu {
-  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
 }
 header .container-menu .logo-menu {
   display: flex;
@@ -365,7 +363,7 @@ header .container-menu .menu-item a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 35vh;
+  min-height: 45vh;
 }
 .hero::before {
   content: "";
@@ -394,6 +392,9 @@ header .container-menu .menu-item a:hover {
   font-size: 16px;
   letter-spacing: 3px;
   margin-bottom: 1rem;
+}
+.hero .cta {
+  margin-top: 0.5rem;
 }
 
 .intro {
@@ -523,8 +524,9 @@ header .container-menu .menu-item a:hover {
 .prestations .prestations-list .prestation .prestation-description h4 {
   font-size: 20px;
   font-weight: bold;
-  -webkit-text-decoration: underline #B31413 6px;
-          text-decoration: underline #B31413 6px;
+  text-decoration: underline;
+  text-decoration-color: #B31413;
+  text-decoration-thickness: 4px;
   margin-bottom: 0.4rem;
   text-transform: uppercase;
 }
@@ -533,6 +535,9 @@ header .container-menu .menu-item a:hover {
   padding: 0.5rem 0;
   line-height: 24px;
   letter-spacing: 4px;
+}
+.prestations .cta {
+  margin: 1rem 0 0;
 }
 
 .wrap-actu-accueil {
@@ -597,18 +602,8 @@ header .container-menu .menu-item a:hover {
 .wrap-actu-accueil .owl-dots .owl-dot.active {
   background: #be1622;
 }
-.wrap-actu-accueil .btn-voir-plus {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: #be1622;
-  color: #fff;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 5px;
-}
-.wrap-actu-accueil .btn-voir-plus:hover {
-  background-color: #7f0f17;
-  text-decoration: none;
+.wrap-actu-accueil .cta {
+  margin: 0.5rem 0 0;
 }
 @media (min-width: 1024px) {
   .wrap-actu-accueil .owl-carousel .item {
@@ -931,20 +926,20 @@ header .container-menu .menu-item a:hover {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 2rem;
 }
 .prestations-page .prestations-tabs .prestations-subtitle {
   cursor: pointer;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   border-bottom: 3px solid transparent;
   transition: all 0.3s;
   color: #000000;
 }
 .prestations-page .prestations-tabs .prestations-subtitle:hover {
-  color: #560505;
+  color: #000000;
 }
 .prestations-page .prestations-tabs .prestations-subtitle::after {
   content: " ▼";
@@ -981,8 +976,8 @@ header .container-menu .menu-item a:hover {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 4px 15px rgba(104, 104, 104, 0.2);
-  width: 300px;
-  height: 370px;
+  width: 311px;
+  height: 371px;
   padding: 0.5em;
 }
 .prestations-page .prestations-content .prestation .prestation-img {
@@ -1382,25 +1377,24 @@ header .container-menu .menu-item a:hover {
   .footer__legal {
     font-size: 17px;
   }
+  /*-----------------------------------------------
+      Page prestations
+  -------------------------------------------------*/
+  .prestations-page .prestations-tabs .prestations-subtitle {
+    font-size: 25px;
+  }
+  .prestations-page .prestations-content .item .prestation {
+    width: 460px;
+    height: 400px;
+    padding: 1rem;
+  }
+  .prestations-page .prestations-content .item .prestation .prestation-description h4 {
+    font-size: 24px;
+  }
+  .prestations-page .prestations-content .item .prestation .prestation-description p {
+    font-size: 18px;
+  }
 }
-/*-----------------------------------------------
-    Page prestations
--------------------------------------------------*/
-.prestations-page .prestations-tabs .prestations-subtitle {
-  font-size: 21px;
-}
-.prestations-page .prestations-content .item .prestation {
-  width: 416px;
-  height: 365px;
-  padding: 1rem;
-}
-.prestations-page .prestations-content .item .prestation .prestation-description h4 {
-  font-size: 24px;
-}
-.prestations-page .prestations-content .item .prestation .prestation-description p {
-  font-size: 18px;
-}
-
 /* ----------------------------------------------
   Styles pour les ordinateurs de bureau (min-width: 1024px)
 ---------------------------------------------- */
@@ -1439,7 +1433,6 @@ header .container-menu .menu-item a:hover {
   header .container-menu .menu {
     margin-top: 0;
     display: block;
-    margin-bottom: 2rem;
   }
   header .container-menu .menu-item {
     display: inline-block;
@@ -1480,10 +1473,7 @@ header .container-menu .menu-item a:hover {
   .hero .hero-part.content {
     font-size: 34px;
   }
-  .hero .hero-cta {
-    margin-top: 3rem;
-  }
-  .hero .hero-cta .button {
+  .hero .button {
     font-size: 14px;
   }
   .intro p {
@@ -1535,6 +1525,7 @@ header .container-menu .menu-item a:hover {
     width: 577px;
     height: 221px;
     max-width: 295px;
+    min-width: 295px;
   }
   .prestations .prestations-list .prestation .prestation-description {
     padding-left: 3rem;
@@ -1579,7 +1570,8 @@ header .container-menu .menu-item a:hover {
   .mentions-legales h2 {
     font-size: 20px;
   }
-  .politique-de-confidentialité p, .politique-de-confidentialité li,
+  .politique-de-confidentialité p,
+  .politique-de-confidentialité li,
   .mentions-legales p,
   .mentions-legales li {
     font-size: 16px;

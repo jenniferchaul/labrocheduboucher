@@ -46,7 +46,7 @@
 
     <div class="bg-video">
         <div class="video-container">
-            <video controls>
+            <video controls preload="metadata" poster="<?= get_theme_file_uri('assets/images/screen.webp'); ?>">
                 <source src="<?= get_theme_file_uri('assets/vidéos/présentation.mp4') ?>" type="video/mp4">
                 Votre navigateur ne prend pas en charge la vidéo.
             </video>

@@ -12,7 +12,7 @@
     right: 2rem;
     width: 50px;
     height: 50px;
-    background-color: $primary; 
+    background-color: $primary;
     color: $white;
     border-radius: 50%;
     display: flex;
@@ -123,7 +123,7 @@ h2 {
     letter-spacing: 1px;
 
     @media (max-width: 320px) {
-        font-size: 19px;
+        font-size: 16px;
     }
 
 
@@ -155,11 +155,10 @@ h2 {
 .cta {
     z-index: 3;
     position: relative;
-    display: flex; 
+    display: flex;
     justify-content: center;
-    align-items: center; 
-    margin-top: 2rem; 
-    text-align: center; 
+    align-items: center;
+    text-align: center;
 }
 
 .button {
@@ -178,8 +177,8 @@ h2 {
     text-align: center;
     letter-spacing: 5px;
     line-height: 22px;
-    max-width: 300px; 
-    margin: 0 auto; 
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .button:hover {
@@ -226,7 +225,7 @@ header {
     &.sticky {
         position: fixed;
         top: 0;
-        background-color: $white; 
+        background-color: $white;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
         .container-menu {
@@ -246,16 +245,15 @@ header {
         }
 
         .logo-menu .img-logo {
-            max-width: 50% !important; 
+            max-width: 50% !important;
         }
     }
 
     .container-menu {
-        margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1rem 1rem;
+        padding: 0.5rem 1rem;
 
         .logo-menu {
             display: flex;
@@ -306,7 +304,7 @@ header {
                 }
 
                 .middle {
-                    opacity: 0; 
+                    opacity: 0;
                 }
 
                 .bottom {
@@ -356,7 +354,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 35vh;
+    min-height: 45vh;
 
     &::before {
         content: "";
@@ -388,6 +386,10 @@ header {
             letter-spacing: 3px;
             margin-bottom: 1rem;
         }
+    }
+
+    .cta {
+        margin-top: 0.5rem;
     }
 }
 
@@ -534,7 +536,9 @@ header {
                 h4 {
                     font-size: 20px;
                     font-weight: bold;
-                    text-decoration: underline $primary 6px;
+                    text-decoration: underline;
+                    text-decoration-color: $primary;
+                    text-decoration-thickness: 4px;
                     margin-bottom: 0.4rem;
                     text-transform: uppercase;
                 }
@@ -547,6 +551,10 @@ header {
                 }
             }
         }
+    }
+
+    .cta {
+        margin: 1rem 0 0;
     }
 }
 
@@ -622,19 +630,8 @@ header {
         }
     }
 
-    .btn-voir-plus {
-        display: inline-block;
-        margin-top: 20px;
-        background-color: #be1622;
-        color: #fff;
-        padding: 10px 20px;
-        text-transform: uppercase;
-        border-radius: 5px;
-
-        &:hover {
-            background-color: #7f0f17;
-            text-decoration: none;
-        }
+    .cta {
+        margin: 0.5rem 0 0;
     }
 
     @media (min-width: 1024px) {
@@ -779,7 +776,7 @@ header {
 
         &__rating {
             font-size: 1rem;
-            color: #f39c12; 
+            color: #f39c12;
             margin-bottom: 0.75rem;
         }
 
@@ -1016,20 +1013,20 @@ header {
         display: flex;
         justify-content: center;
         gap: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         margin-top: 2rem;
 
         .prestations-subtitle {
             cursor: pointer;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: bold;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             border-bottom: 3px solid transparent;
             transition: all 0.3s;
             color: $black;
 
             &:hover {
-                color: $buttonHover;
+                color: $black;
             }
 
             &::after {
@@ -1073,8 +1070,8 @@ header {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0px 4px 15px rgba(104, 104, 104, 0.2);
-            width: 300px;
-            height: 370px;
+            width: 311px;
+            height: 371px;
             padding: 0.5em;
 
             .prestation-img {
@@ -1111,7 +1108,7 @@ header {
     .actualites-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; 
+        justify-content: center;
         gap: 20px;
         margin-top: 20px;
 
@@ -1124,11 +1121,11 @@ header {
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             background-color: #fff;
-            transition: transform 0.3s ease-in-out; 
+            transition: transform 0.3s ease-in-out;
 
             &:hover {
                 transform: scale(1.05);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             }
 
             .img-box {
@@ -1178,7 +1175,7 @@ header {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
     padding: 20px;
 }
@@ -1194,21 +1191,21 @@ header {
     max-height: 260px;
 
     &:hover {
-        transform: scale(1.05); 
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     img {
         width: 100%;
-        height: 100%; 
-        object-fit: cover; 
+        height: 100%;
+        object-fit: cover;
         display: block;
         transition: transform 0.3s ease;
         max-height: 260px;
     }
 
     &:hover img {
-        transform: scale(1.05); 
+        transform: scale(1.05);
     }
 }
 
@@ -1281,17 +1278,17 @@ header {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            background-color: #fff; 
-            appearance: none; 
+            background-color: #fff;
+            appearance: none;
 
             &:focus {
-                border-color: #be1622; 
-                background-color: #fff; 
-                outline: none; 
+                border-color: #be1622;
+                background-color: #fff;
+                outline: none;
             }
 
             &::placeholder {
-                color: #aaa; 
+                color: #aaa;
             }
         }
 
@@ -1563,33 +1560,33 @@ header {
             font-size: 17px;
         }
     }
-}
 
-/*-----------------------------------------------
+    /*-----------------------------------------------
     Page prestations
 -------------------------------------------------*/
 
-.prestations-page {
-    .prestations-tabs {
-        .prestations-subtitle {
-            font-size: 21px;
+    .prestations-page {
+        .prestations-tabs {
+            .prestations-subtitle {
+                font-size: 25px;
+            }
         }
-    }
 
-    .prestations-content {
-        .item {
-            .prestation {
-                width: 416px;
-                height: 365px;
-                padding: 1rem;
+        .prestations-content {
+            .item {
+                .prestation {
+                    width: 460px;
+                    height: 400px;
+                    padding: 1rem;
 
-                .prestation-description {
-                    h4 {
-                        font-size: 24px;
-                    }
+                    .prestation-description {
+                        h4 {
+                            font-size: 24px;
+                        }
 
-                    p {
-                        font-size: 18px;
+                        p {
+                            font-size: 18px;
+                        }
                     }
                 }
             }
@@ -1650,7 +1647,6 @@ header {
             .menu {
                 margin-top: 0;
                 display: block;
-                margin-bottom: 2rem;
             }
 
             .menu-item {
@@ -1708,12 +1704,8 @@ header {
             }
         }
 
-        .hero-cta {
-            margin-top: 3rem;
-
-            .button {
-                font-size: 14px;
-            }
+        .button {
+            font-size: 14px;
         }
     }
 
@@ -1783,6 +1775,7 @@ header {
                     width: 577px;
                     height: 221px;
                     max-width: 295px;
+                    min-width: 295px;
                 }
 
                 .prestation-description {
@@ -1837,6 +1830,7 @@ header {
     .politique-de-confidentialité,
     .mentions-legales {
         padding: 1rem 5rem 4rem;
+
         h1 {
             font-size: 24px;
         }
@@ -1845,7 +1839,8 @@ header {
             font-size: 20px;
         }
 
-        p, li {
+        p,
+        li {
             font-size: 16px;
         }
     }

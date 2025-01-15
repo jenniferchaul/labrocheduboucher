@@ -12,6 +12,8 @@ get_header();
 
   <h2>Les actualités</h2>
 
+  <p><strong>Les actualités </strong> de La Broche du Boucher : découvrez nos derniers événements et restez informés de toutes nos nouveautés et services.</p>
+
   <div id="actualites-container" class="actualites-container">
     <!-- Les actualités seront chargées ici via AJAX -->
     <?php

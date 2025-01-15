@@ -7,9 +7,9 @@
                 N'hésitez pas à nous contacter directement !
             </p>
             <div class="contact-info">
-                <p>Téléphone : <a href="tel:+33661246520">06 29 84 15 79</a></p>
+                <p>Téléphone : <a href="tel:+33629841579">06 29 84 15 79</a></p>
                 <br>
-                <p>Email : <a href="mailto:contact@votre-site.fr">labrocheduboucher@gmail.com</a></p>
+                <p>Email : <a href="mailto:labrocheduboucher@gmail.com">labrocheduboucher@gmail.com</a></p>
             </div>
             <a href="<?= home_url('/contact') ?>" class="button">Accéder au formulaire</a>
         </div>

@@ -2,6 +2,8 @@
 
 require __DIR__ . '/customizers/hero-image.tpl.php';
 
+define('THEME_VERSION', '1.0.0');
+
 add_action('after_setup_theme', 'labrocheduboucher_initializeTheme');
 
 if (!function_exists('labrocheduboucher_initializeTheme')) {
@@ -23,7 +25,15 @@ add_action('wp_enqueue_scripts', function () {
         'labrocheduboucher-styles',
         get_theme_file_uri('assets/css/style.css'),
         [],
-        '1.0.0'
+        THEME_VERSION
+    );
+
+    // Google Fonts
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Cinzel:wght@400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap',
+        [],
+        null
     );
 
     wp_enqueue_style(
@@ -31,6 +41,27 @@ add_action('wp_enqueue_scripts', function () {
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
         [],
         '5.15.4'
+    );
+
+    wp_enqueue_style(
+        'owl-carousel',
+        'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
+        [],
+        '2.3.4'
+    );
+
+    wp_enqueue_style(
+        'owl-carousel-theme',
+        'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css',
+        [],
+        '2.3.4'
+    );
+
+    wp_enqueue_style(
+        'lightbox-css',
+        'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css',
+        [],
+        '2.11.3'
     );
 
     wp_enqueue_script(
@@ -41,11 +72,12 @@ add_action('wp_enqueue_scripts', function () {
         true
     );
 
-    wp_enqueue_style(
-        'lightbox-css',
-        'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css',
-        [],
-        '2.11.3'
+    wp_enqueue_script(
+        'owl-carousel',
+        'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
+        ['jquery'],
+        '2.3.4',
+        true
     );
 
     wp_enqueue_script(
@@ -57,16 +89,9 @@ add_action('wp_enqueue_scripts', function () {
     );
 });
 
-// Ajouter ajaxUrl pour les requêtes AJAX
-function add_ajax_url_to_script()
-{
-?>
-    <script type="text/javascript">
-        var ajaxUrl = "<?php echo admin_url('admin-ajax.php'); ?>";
-    </script>
-    <?php
-}
-add_action('wp_head', 'add_ajax_url_to_script');
+add_action('wp_head', function () {
+    echo '<script type="text/javascript">var ajaxUrl = "' . admin_url('admin-ajax.php') . '";</script>';
+});
 
 // Enregistrer un Custom Post Type pour les prestations
 function labrocheduboucher_register_prestations_cpt()
@@ -89,7 +114,7 @@ function labrocheduboucher_register_prestations_cpt()
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => true,
+        'has_archive'        => true,  
         'supports'           => array('title', 'editor', 'thumbnail'),
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-carrot',

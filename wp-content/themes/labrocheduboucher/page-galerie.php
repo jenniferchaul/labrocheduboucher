@@ -6,9 +6,9 @@ Template Name: Galerie
 get_header();
 ?>
 
-<section>
+<section class="gallery-page">
 
-    <h2>Galerie</h2>
+    <h1>Galerie</h1>
 
     <div class="gallery-filters">
         <button class="filter-btn active" data-category="toutes">Toutes</button>

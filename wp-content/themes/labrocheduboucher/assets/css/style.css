@@ -487,6 +487,11 @@ header .container-menu .menu-item a:hover {
   margin-right: 0.5rem;
   color: #ffffff;
 }
+.prestations .prestations-intro {
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6588235294);
+  line-height: 1.1;
+}
 .prestations .prestations-list {
   width: 100%;
   display: flex;
@@ -505,7 +510,7 @@ header .container-menu .menu-item a:hover {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 24rem;
-  height: 385px;
+  height: 358px;
   max-width: 20rem;
 }
 .prestations .prestations-list .prestation .prestation-img {
@@ -533,8 +538,8 @@ header .container-menu .menu-item a:hover {
 .prestations .prestations-list .prestation .prestation-description p {
   font-size: 15px;
   padding: 0.5rem 0;
-  line-height: 24px;
-  letter-spacing: 4px;
+  line-height: 20px;
+  letter-spacing: 2px;
 }
 .prestations .cta {
   margin: 1rem 0 0;
@@ -1005,6 +1010,11 @@ header .container-menu .menu-item a:hover {
 .wrap-actualites {
   padding: 2rem;
 }
+.wrap-actualites p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
 .wrap-actualites .actualites-container {
   display: flex;
   flex-wrap: wrap;
@@ -1045,11 +1055,6 @@ header .container-menu .menu-item a:hover {
   color: #B31413;
   margin-bottom: 10px;
 }
-.wrap-actualites .actualites-container .actualite-item p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.4;
-}
 
 #actualites {
   background-color: #fff;
@@ -1064,6 +1069,41 @@ header .container-menu .menu-item a:hover {
 /*-----------------------------------------------
     Page galerie
 -------------------------------------------------*/
+.gallery-page h1,
+.contact-page h1 {
+  font-size: 25px;
+  color: #B31413;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.gallery-page h1::before,
+.contact-page h1::before {
+  position: relative;
+  z-index: 1;
+  content: "";
+  display: inline-block;
+  width: 46px;
+  height: 5px;
+  background: #B31413;
+  bottom: 4px;
+  left: -7px;
+}
+.gallery-page h1::after,
+.contact-page h1::after {
+  position: relative;
+  z-index: 1;
+  content: "";
+  display: inline-block;
+  width: 46px;
+  height: 5px;
+  background: #B31413;
+  bottom: 4px;
+  left: 7px;
+}
+
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1124,6 +1164,10 @@ header .container-menu .menu-item a:hover {
   padding: 0.5rem 1rem;
   font-family: "Roboto Slab", serif;
 }
+.contact-page p {
+  font-size: 16px;
+  line-height: 1.6;
+}
 .contact-page h3 {
   font-size: 20px;
   -webkit-text-decoration: underline #B31413;
@@ -1136,17 +1180,32 @@ header .container-menu .menu-item a:hover {
   border-radius: 8px;
   margin-bottom: 20px;
 }
-.contact-page .contact-details p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-.contact-page .google-map {
-  margin-top: 20px;
-}
-.contact-page .google-map iframe {
+.contact-page .map-container {
+  position: relative;
   width: 100%;
-  height: 400px;
-  border: none;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.contact-page .map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (min-width: 768px) {
+  .contact-page .map-container {
+    padding-bottom: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-page .map-container {
+    padding-bottom: 30%;
+  }
 }
 .contact-page .wpcf7-form {
   display: grid;
@@ -1275,6 +1334,9 @@ header .container-menu .menu-item a:hover {
   .hero .hero-part.content {
     font-size: 28px;
   }
+  .hero .cta {
+    margin-top: 1.5rem;
+  }
   .intro {
     padding: 2rem;
   }
@@ -1295,6 +1357,13 @@ header .container-menu .menu-item a:hover {
   }
   .prestations h3 {
     font-size: 26px;
+  }
+  .prestations .prestations-intro {
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6588235294);
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 1rem;
   }
   .prestations .prestations-list {
     width: 82%;
@@ -1317,6 +1386,7 @@ header .container-menu .menu-item a:hover {
   }
   .prestations .prestations-list .prestation .prestation-description p {
     font-size: 18px;
+    line-height: 23pxi;
   }
   .wrap-actu-accueil .owl-carousel .item {
     height: 430px;
@@ -1513,6 +1583,9 @@ header .container-menu .menu-item a:hover {
     width: 24%;
     margin: 2rem auto 1rem;
   }
+  .prestations .prestations-intro {
+    padding: 0 8rem;
+  }
   .prestations .prestations-list .prestation {
     width: 82rem;
     height: 16rem;
@@ -1545,13 +1618,26 @@ header .container-menu .menu-item a:hover {
     justify-content: space-evenly;
   }
   /*----------------------------------------
+      Page galerie
+  ------------------------------------------*/
+  .gallery-page {
+    padding: 1.5rem 1rem;
+  }
+  /*----------------------------------------
       Page de contact
   ------------------------------------------*/
-  .main-form {
+  .contact-page {
+    padding: 1.5rem 1rem;
+  }
+  .contact-page .contact-intro {
+    padding: 2rem 27rem;
+    text-align: center;
+  }
+  .contact-page .main-form {
     display: flex;
     justify-content: space-evenly;
   }
-  .main-form .contact-details {
+  .contact-page .main-form .contact-details {
     height: 12rem;
     width: 36rem;
   }

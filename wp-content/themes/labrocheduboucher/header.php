@@ -4,17 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Balise Titre -->
+    <title>Traiteur à la broche - Rhône-Alpes & Bourgogne | La Broche du Boucher</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="La Broche du Boucher, traiteur spécialiste de la cuisson à la broche en Rhône-Alpes, Bourgogne, et partout en France. Mariages, fêtes privées, séminaires.">
+
+    <!-- Meta Keywords (facultatif, mais peut aider légèrement) -->
+    <meta name="keywords" content="traiteur cuisson à la broche, viande à la broche, traiteur événementiel, animation culinaire, mariage, fête privée, séminaire, viande au feu de bois">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.labrocheduboucher.fr">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="La Broche du Boucher - Traiteur cuisson viande à la broche">
+    <meta property="og:description" content="Découvrez La Broche du Boucher, spécialiste de la cuisson à la broche pour vos événements : mariage, séminaire, fêtes privées. Contactez-nous pour un service de traiteur sur mesure !">
+    <meta property="og:image" content="<?= get_theme_file_uri('assets/images/logo.webp'); ?>">
+    <meta property="og:url" content="<?= home_url(); ?>">
+    <meta property="og:type" content="website">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS803MP2NR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GS803MP2NR');
+    </script>
+
     <?php wp_head(); ?>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 </head>
 
@@ -24,16 +47,16 @@
         <div class="top-bar__container">
             <!-- Réseaux sociaux -->
             <div class="top-bar__socials">
-                <a href="tel:+33612345678">
+                <a href="tel:+33629841579">
                     <i class="fas fa-phone-alt"></i>
                 </a>
-                <a href="mailto:contact@labrocheduboucher.com">
+                <a href="mailto:labrocheduboucher@gmail.com">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61557097838150" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61557097838150" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://www.instagram.com/labrocheduboucher/?locale=en_US%2Cen_GB" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/labrocheduboucher/?locale=en_US%2Cen_GB" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -43,7 +66,7 @@
     <header>
         <div class="container-menu">
             <div class="logo-menu"><a href="<?= home_url('/') ?>">
-                    <img class="img-logo" src="<?= get_theme_file_uri('assets/images/logo.webp') ?>" alt="logo">
+                    <img class="img-logo" src="<?= get_theme_file_uri('assets/images/logo.webp') ?>" alt="logo la Broche du Boucher">
                 </a>
             </div>
 

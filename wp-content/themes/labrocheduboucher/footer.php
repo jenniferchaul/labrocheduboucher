@@ -11,11 +11,11 @@
             <div class="footer__info">
                 <div class="footer__info-item">
                     <i class="fas fa-phone-alt footer__icon"></i>
-                    <p><a href="tel:+33612345678">06 29 84 15 79</a></p>
+                    <p><a href="tel:+33629841579">06 29 84 15 79</a></p>
                 </div>
                 <div class="footer__info-item">
                     <i class="fas fa-envelope footer__icon"></i>
-                    <p><a href="mailto:contact@labrocheduboucher.com">labrocheduboucher@gmail.com</a></p>
+                    <p><a href="mailto:labrocheduboucher@gmail.com">labrocheduboucher@gmail.com</a></p>
                 </div>
                 <div class="footer__info-item">
                     <i class="fas fa-map-marker-alt footer__icon"></i>
@@ -25,10 +25,10 @@
 
             <!-- Réseaux sociaux -->
             <div class="footer__socials">
-                <a href="https://www.facebook.com/profile.php?id=61557097838150" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61557097838150" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://www.instagram.com/labrocheduboucher/?locale=en_US%2Cen_GB" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/labrocheduboucher/?locale=en_US%2Cen_GB" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>

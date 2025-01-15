@@ -10,12 +10,10 @@ if ($backgroundImage) {
 
 <section class="hero" style="<?= $style; ?>">
 
-    <p class="hero-part title">
-        L’Art de la viande à la broche
-    </p>
+<h1 class="hero-part title">L'Art de la viande à la broche</h1>
 
     <p class="hero-part content">
-        Découvrez notre savoir-faire
+        Découvrez notre savoir-faire en cuisson de <strong>viandes à la broche</strong>
     </p>
 
     <div class="cta">

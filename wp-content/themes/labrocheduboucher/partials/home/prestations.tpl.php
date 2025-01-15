@@ -1,6 +1,12 @@
 <section id="prestations" class="prestations">
     <h2 class="prestations-title">Nos Prestations</h2>
 
+    <div class="prestations-intro">
+        <p>
+            Découvrez nos <strong>viandes délicieusement cuites à la broche</strong> et au <strong>feu de bois</strong>. Pour enrichir vos repas, laissez-vous tenter par nos <strong>spécialités maison</strong> : paëlla généreuse, pommes de terre grenailles fondantes, variétés de salades...
+        </p>
+    </div>
+
     <!-- Viandes à la Broche -->
     <h3 class="prestations-subtitle"><i class="fas fa-fire"></i>Nos Viandes à la Broche</h3>
     <div class="prestations-list">

@@ -10,9 +10,9 @@ if ($backgroundImage) {
 
 <section class="hero" style="<?= $style; ?>">
 
-    <p class="hero-part title">
+    <h1 class="hero-part title">
         Nos Prestations
-    </p>
+</h1>
 
     <p class="hero-part content">
         Nos viandes et spécialités maison.
